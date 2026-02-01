@@ -1,0 +1,23 @@
+[package]
+name = "chakra-derive"
+version = "0.1.0"
+edition = "2021"
+authors = ["Chakra ORM Contributors"]
+description = "Procedural macros for Chakra ORM"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/chakra-orm/chakra"
+keywords = ["orm", "database", "macro", "derive"]
+categories = ["database"]
+
+[lib]
+proc-macro = true
+
+[dependencies]
+proc-macro2 = "1.0"
+quote = "1.0"
+syn = { version = "2.0", features = ["full", "parsing", "extra-traits"] }
+darling = "0.20"
+convert_case = "0.6"
+
+[dev-dependencies]
+chakra-core = { path = "../chakra-core" }

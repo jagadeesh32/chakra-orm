@@ -1,0 +1,30 @@
+[package]
+name = "chakra-migrate"
+version = "0.1.0"
+edition = "2021"
+authors = ["Chakra ORM Contributors"]
+description = "Migration engine for Chakra ORM"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/chakra-orm/chakra"
+keywords = ["orm", "database", "migration", "schema"]
+categories = ["database"]
+
+[dependencies]
+chakra-core = { path = "../chakra-core" }
+chakra-schema = { path = "../chakra-schema" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+toml = "0.8"
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true, features = ["fs"] }
+tracing = { workspace = true }
+chrono = { workspace = true }
+uuid = { workspace = true }
+sha2 = "0.10"
+hex = "0.4"
+walkdir = "2.4"
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["full", "test-util"] }
+tempfile = "3.10"

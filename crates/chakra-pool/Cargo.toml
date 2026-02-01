@@ -1,0 +1,23 @@
+[package]
+name = "chakra-pool"
+version = "0.1.0"
+edition = "2021"
+authors = ["Chakra ORM Contributors"]
+description = "Connection pooling for Chakra ORM"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/chakra-orm/chakra"
+keywords = ["orm", "database", "pool", "connection"]
+categories = ["database"]
+
+[dependencies]
+chakra-core = { path = "../chakra-core" }
+async-trait = { workspace = true }
+tokio = { workspace = true, features = ["sync", "time"] }
+tracing = { workspace = true }
+thiserror = { workspace = true }
+parking_lot = "0.12"
+dashmap = "5.5"
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["full", "test-util"] }
+rand = "0.8"

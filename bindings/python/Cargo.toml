@@ -1,0 +1,30 @@
+[package]
+name = "chakra-python"
+version = "0.1.0"
+edition = "2021"
+authors = ["Chakra ORM Contributors"]
+description = "Python bindings for Chakra ORM"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/chakra-orm/chakra"
+keywords = ["orm", "database", "python", "pyo3"]
+
+[lib]
+name = "chakra"
+crate-type = ["cdylib"]
+
+[dependencies]
+chakra-core = { path = "../../crates/chakra-core" }
+chakra-schema = { path = "../../crates/chakra-schema" }
+chakra-migrate = { path = "../../crates/chakra-migrate" }
+chakra-pool = { path = "../../crates/chakra-pool" }
+chakra-postgres = { path = "../../crates/chakra-postgres" }
+chakra-mysql = { path = "../../crates/chakra-mysql" }
+chakra-sqlite = { path = "../../crates/chakra-sqlite" }
+pyo3 = { version = "0.21", features = ["extension-module"] }
+pyo3-asyncio-0-21 = { version = "0.21", features = ["tokio-runtime"] }
+tokio = { workspace = true, features = ["rt-multi-thread"] }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[build-dependencies]
+pyo3-build-config = "0.21"

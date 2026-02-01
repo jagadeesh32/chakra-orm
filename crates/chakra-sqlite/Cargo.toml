@@ -1,0 +1,28 @@
+[package]
+name = "chakra-sqlite"
+version = "0.1.0"
+edition = "2021"
+authors = ["Chakra ORM Contributors"]
+description = "SQLite adapter for Chakra ORM"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/chakra-orm/chakra"
+keywords = ["orm", "database", "sqlite"]
+categories = ["database"]
+
+[dependencies]
+chakra-core = { path = "../chakra-core" }
+chakra-pool = { path = "../chakra-pool" }
+chakra-schema = { path = "../chakra-schema" }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+rusqlite = { version = "0.31", features = ["bundled"] }
+tokio-rusqlite = "0.5"
+tracing = { workspace = true }
+serde = { workspace = true }
+chrono = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["full", "test-util"] }
+tempfile = "3.10"

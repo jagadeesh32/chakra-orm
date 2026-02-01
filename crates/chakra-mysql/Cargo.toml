@@ -1,0 +1,27 @@
+[package]
+name = "chakra-mysql"
+version = "0.1.0"
+edition = "2021"
+authors = ["Chakra ORM Contributors"]
+description = "MySQL/MariaDB adapter for Chakra ORM"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/chakra-orm/chakra"
+keywords = ["orm", "database", "mysql", "mariadb"]
+categories = ["database"]
+
+[dependencies]
+chakra-core = { path = "../chakra-core" }
+chakra-pool = { path = "../chakra-pool" }
+chakra-schema = { path = "../chakra-schema" }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+mysql_async = { version = "0.34", default-features = false, features = ["default-rustls"] }
+tracing = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+chrono = { workspace = true }
+uuid = { workspace = true }
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["full", "test-util"] }

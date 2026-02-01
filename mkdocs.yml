@@ -1,0 +1,277 @@
+site_name: Chakra ORM
+site_description: Ultra-Fast Cross-Language ORM Framework — Rust Core + Python Bindings
+site_author: Chakra ORM Team
+site_url: https://chakra-orm.dev
+
+repo_name: chakra-orm/chakra-orm
+repo_url: https://github.com/chakra-orm/chakra-orm
+edit_uri: edit/main/docs/
+
+copyright: Copyright &copy; 2024-2026 Chakra ORM Contributors
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  language: en
+
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/database-cog
+
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - header.autohide
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    - announce.dismiss
+
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+  - tags:
+      tags_file: tags.md
+
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+  # PyMdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: chakra-orm
+      repo: chakra-orm
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - docs/includes/abbreviations.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra:
+  version:
+    provider: mike
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/chakra-orm/chakra-orm
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/chakra-orm/
+    - icon: fontawesome/brands/rust
+      link: https://crates.io/crates/chakra
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/chakra-orm
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for.
+
+extra_css:
+  - assets/css/custom.css
+
+extra_javascript:
+  - assets/js/custom.js
+
+nav:
+  - Home: index.md
+
+  - Features:
+    - features/index.md
+    - Performance: features/performance.md
+    - Cross-Language: features/cross-language.md
+    - Type Safety: features/type-safety.md
+    - Async Native: features/async-native.md
+    - Auto Migrations: features/migrations.md
+    - Connection Pooling: features/pooling.md
+    - Database Support: features/databases.md
+
+  - Learn:
+    - learn/index.md
+    - Getting Started:
+      - learn/getting-started/index.md
+      - Installation: learn/getting-started/installation.md
+      - Quick Start (Python): learn/getting-started/quickstart-python.md
+      - Quick Start (Rust): learn/getting-started/quickstart-rust.md
+      - Configuration: learn/getting-started/configuration.md
+    - Models:
+      - learn/models/index.md
+      - Defining Models: learn/models/defining-models.md
+      - Field Types: learn/models/field-types.md
+      - Relationships: learn/models/relationships.md
+      - Model Options: learn/models/options.md
+    - Queries:
+      - learn/queries/index.md
+      - Basic Queries: learn/queries/basic.md
+      - Filtering: learn/queries/filtering.md
+      - Ordering & Pagination: learn/queries/ordering.md
+      - Aggregation: learn/queries/aggregation.md
+      - Joins & Relationships: learn/queries/joins.md
+      - Raw SQL: learn/queries/raw-sql.md
+    - Sessions:
+      - learn/sessions/index.md
+      - Unit of Work: learn/sessions/unit-of-work.md
+      - Transactions: learn/sessions/transactions.md
+      - Identity Map: learn/sessions/identity-map.md
+    - Migrations:
+      - learn/migrations/index.md
+      - Creating Migrations: learn/migrations/creating.md
+      - Applying Migrations: learn/migrations/applying.md
+      - Rollback: learn/migrations/rollback.md
+      - Advanced: learn/migrations/advanced.md
+    - Integrations:
+      - learn/integrations/index.md
+      - FastAPI: learn/integrations/fastapi.md
+      - Django: learn/integrations/django.md
+      - Flask: learn/integrations/flask.md
+      - Axum: learn/integrations/axum.md
+      - Actix Web: learn/integrations/actix.md
+
+  - Reference:
+    - reference/index.md
+    - CLI Commands: reference/cli.md
+    - Configuration: reference/configuration.md
+    - Python Reference:
+      - reference/python/index.md
+      - Model: reference/python/model.md
+      - Fields: reference/python/fields.md
+      - QuerySet: reference/python/queryset.md
+      - Session: reference/python/session.md
+      - Expressions: reference/python/expressions.md
+    - Rust Reference:
+      - reference/rust/index.md
+      - Model Trait: reference/rust/model.md
+      - Field Types: reference/rust/fields.md
+      - Query Builder: reference/rust/query.md
+      - Session: reference/rust/session.md
+      - Macros: reference/rust/macros.md
+
+  - API:
+    - api/index.md
+    - Python API:
+      - api/python/index.md
+      - chakra: api/python/chakra.md
+      - chakra.models: api/python/models.md
+      - chakra.fields: api/python/fields.md
+      - chakra.query: api/python/query.md
+      - chakra.session: api/python/session.md
+      - chakra.migrate: api/python/migrate.md
+      - chakra.exceptions: api/python/exceptions.md
+    - Rust API:
+      - api/rust/index.md
+      - chakra: api/rust/chakra.md
+      - chakra::model: api/rust/model.md
+      - chakra::query: api/rust/query.md
+      - chakra::session: api/rust/session.md
+      - chakra::pool: api/rust/pool.md
+      - chakra::migrate: api/rust/migrate.md
+      - chakra::error: api/rust/error.md
+
+  - Usage:
+    - usage/index.md
+    - Examples:
+      - usage/examples/index.md
+      - Blog Application: usage/examples/blog.md
+      - E-Commerce: usage/examples/ecommerce.md
+      - Multi-tenant SaaS: usage/examples/multitenant.md
+      - Real-time App: usage/examples/realtime.md
+    - Patterns:
+      - usage/patterns/index.md
+      - Repository Pattern: usage/patterns/repository.md
+      - Active Record: usage/patterns/active-record.md
+      - CQRS: usage/patterns/cqrs.md
+      - Soft Deletes: usage/patterns/soft-deletes.md
+      - Audit Logging: usage/patterns/audit.md
+    - Cookbook:
+      - usage/cookbook/index.md
+      - Bulk Operations: usage/cookbook/bulk-operations.md
+      - Complex Queries: usage/cookbook/complex-queries.md
+      - Performance Tips: usage/cookbook/performance.md
+      - Testing: usage/cookbook/testing.md
+
+  - Release Notes:
+    - release-notes/index.md
+    - Changelog: release-notes/changelog.md
+    - Migration Guide: release-notes/migration-guide.md
+    - Roadmap: release-notes/roadmap.md
+
+  - Tags: tags.md

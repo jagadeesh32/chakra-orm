@@ -1,0 +1,31 @@
+[package]
+name = "chakra-postgres"
+version = "0.1.0"
+edition = "2021"
+authors = ["Chakra ORM Contributors"]
+description = "PostgreSQL adapter for Chakra ORM"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/chakra-orm/chakra"
+keywords = ["orm", "database", "postgresql", "postgres"]
+categories = ["database"]
+
+[dependencies]
+chakra-core = { path = "../chakra-core" }
+chakra-pool = { path = "../chakra-pool" }
+chakra-schema = { path = "../chakra-schema" }
+chakra-migrate = { path = "../chakra-migrate" }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+tokio-postgres = { version = "0.7", features = ["with-chrono-0_4", "with-uuid-1", "with-serde_json-1"] }
+deadpool-postgres = { version = "0.12", features = ["serde"] }
+native-tls = "0.2"
+postgres-native-tls = "0.5"
+tracing = { workspace = true }
+serde = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["full", "test-util"] }

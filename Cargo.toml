@@ -1,0 +1,91 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/chakra-core",
+    "crates/chakra-schema",
+    "crates/chakra-migrate",
+    "crates/chakra-pool",
+    "crates/chakra-derive",
+    "crates/chakra-cli",
+    "crates/chakra-postgres",
+    "crates/chakra-mysql",
+    "crates/chakra-sqlite",
+    "bindings/python",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Chakra ORM Contributors"]
+license = "MIT"
+repository = "https://github.com/chakra-orm/chakra-orm"
+homepage = "https://chakra-orm.dev"
+documentation = "https://docs.rs/chakra"
+readme = "README.md"
+keywords = ["orm", "database", "sql", "async", "postgres"]
+categories = ["database", "asynchronous"]
+
+[workspace.dependencies]
+# Internal crates
+chakra-core = { path = "crates/chakra-core", version = "0.1.0" }
+chakra-schema = { path = "crates/chakra-schema", version = "0.1.0" }
+chakra-migrate = { path = "crates/chakra-migrate", version = "0.1.0" }
+chakra-pool = { path = "crates/chakra-pool", version = "0.1.0" }
+chakra-derive = { path = "crates/chakra-derive", version = "0.1.0" }
+chakra-postgres = { path = "crates/chakra-postgres", version = "0.1.0" }
+chakra-mysql = { path = "crates/chakra-mysql", version = "0.1.0" }
+chakra-sqlite = { path = "crates/chakra-sqlite", version = "0.1.0" }
+
+# Async runtime
+tokio = { version = "1.35", features = ["full"] }
+async-trait = "0.1"
+futures = "0.3"
+
+# Database drivers
+tokio-postgres = { version = "0.7", features = ["with-chrono-0_4", "with-serde_json-1", "with-uuid-1"] }
+deadpool-postgres = "0.12"
+sqlx = { version = "0.7", features = ["runtime-tokio", "postgres", "mysql", "sqlite", "chrono", "uuid", "json"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+
+# Types
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.6", features = ["v4", "serde"] }
+rust_decimal = { version = "1.33", features = ["serde"] }
+
+# Error handling
+thiserror = "1.0"
+anyhow = "1.0"
+
+# Logging/tracing
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# CLI
+clap = { version = "4.4", features = ["derive"] }
+
+# Proc macros
+proc-macro2 = "1.0"
+quote = "1.0"
+syn = { version = "2.0", features = ["full", "extra-traits"] }
+
+# Python bindings
+pyo3 = { version = "0.21", features = ["extension-module"] }
+pyo3-asyncio-0-21 = { version = "0.21", features = ["tokio-runtime"] }
+
+# Testing
+tokio-test = "0.4"
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3

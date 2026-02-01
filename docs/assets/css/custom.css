@@ -1,0 +1,104 @@
+/* Chakra ORM Custom Styles */
+
+:root {
+  --chakra-primary: #FF6B35;
+  --chakra-secondary: #6B35FF;
+  --chakra-dark: #1a1a2e;
+}
+
+/* Hero section on home page */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, var(--chakra-primary) 0%, var(--chakra-secondary) 100%);
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: white !important;
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  opacity: 0.9;
+  color: white !important;
+  border: none !important;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 1rem auto 2rem;
+}
+
+.hero .md-button {
+  margin: 0.5rem;
+}
+
+.hero .md-button--primary {
+  background-color: white;
+  color: var(--chakra-primary);
+  border-color: white;
+}
+
+.hero .md-button--primary:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Footer CTA */
+.footer-cta {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--md-default-bg-color--light);
+  border-radius: 1rem;
+  margin-top: 3rem;
+}
+
+.footer-cta h2 {
+  border: none !important;
+}
+
+/* Code block improvements */
+.highlight {
+  border-radius: 0.5rem;
+}
+
+/* Card grid improvements */
+.grid.cards > ul > li {
+  border-radius: 0.75rem;
+}
+
+/* Tab improvements */
+.md-typeset .tabbed-labels > label {
+  font-weight: 600;
+}
+
+/* Admonition improvements */
+.md-typeset .admonition {
+  border-radius: 0.5rem;
+}
+
+/* Table improvements */
+.md-typeset table:not([class]) th {
+  background-color: var(--md-default-bg-color--light);
+}
+
+/* Logo adjustments */
+.md-header__button.md-logo img {
+  height: 1.5rem;
+}
+
+/* Feature icon sizing */
+.grid.cards .lg {
+  font-size: 2rem;
+}
+
+/* Inline code */
+.md-typeset code {
+  border-radius: 0.25rem;
+}
